@@ -1,0 +1,17 @@
+{
+  "platforms": [
+    "apple",
+    "android",
+    "web"
+  ],
+  "apple": {
+    "modules": [
+      "OnetransferModule"
+    ]
+  },
+  "android": {
+    "modules": [
+      "expo.modules.onetransfer.OnetransferModule"
+    ]
+  }
+}
