@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
 
-group = 'expo.modules.onetransfer'
+group = 'com.github.hamitmohamadi'
 version = '0.1.0'
 
 def expoModulesCorePlugin = new File(project(":expo-modules-core").projectDir.absolutePath, "ExpoModulesCorePlugin.gradle")
@@ -8,6 +9,19 @@ apply from: expoModulesCorePlugin
 applyKotlinExpoModulesCorePlugin()
 useCoreDependencies()
 useExpoPublishing()
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.github.hamitmohamadi'  // Match your GitHub username
+            artifactId = 'expo-module'  // Match your repository name
+            version = '0.1.0'
+            
+            // Include the AAR artifact
+            artifact("$buildDir/outputs/aar/${project.name}-release.aar")
+        }
+    }
+}
 
 // If you want to use the managed Android SDK versions from expo-modules-core, set this to true.
 // The Android SDK versions will be bumped from time to time in SDK releases and may introduce breaking changes in your module code.
