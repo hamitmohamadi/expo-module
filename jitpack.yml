@@ -4,4 +4,4 @@ gradle:
   command: :android:build
   settings: |
     include ':android'
-    rootProject.name = 'onetransfer-module'
+    rootProject.name = 'onetransfer'
