@@ -28,12 +28,14 @@
   "author": "Hamid Mohamadi <mohammadi842@gmail.com> (https://github.com/hamitmohamadi)",
   "license": "MIT",
   "homepage": "https://github.com/hamitmohamadi/onetransfer#readme",
-  "dependencies": {},
+  "dependencies": {
+    "expo-build-properties": "~0.13.2"
+  },
   "devDependencies": {
     "@types/react": "~18.3.12",
     "expo-module-scripts": "^4.0.3",
     "expo": "~52.0.0",
-    "react-native": "0.76.0"
+    "react-native": "0.76.7"
   },
   "peerDependencies": {
     "expo": "*",

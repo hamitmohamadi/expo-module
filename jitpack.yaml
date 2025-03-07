@@ -1,0 +1,7 @@
+jdk:
+  - openjdk17
+
+install:
+  - echo "Running EAS build..."
+  - npm install -g eas-cli
+  - eas build --local --platform android
