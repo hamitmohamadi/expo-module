@@ -10,17 +10,29 @@ applyKotlinExpoModulesCorePlugin()
 useCoreDependencies()
 useExpoPublishing()
 
+// Configure publishing
 publishing {
     publications {
         maven(MavenPublication) {
-            groupId = 'com.github.hamitmohamadi'  // Match your GitHub username
-            artifactId = 'expo-module'  // Match your repository name
-            version = '0.1.0'
+            groupId = 'com.github.hamitmohamadi'
+            artifactId = 'onetransfer'
+            version = '1.0.0'
             
-            // Include the AAR artifact
-            artifact("$buildDir/outputs/aar/${project.name}-release.aar")
+            // Include the AAR and sources
+            artifact("$buildDir/outputs/aar/onetransfer-release.aar") {
+                builtBy tasks.named('assembleRelease')
+            }
+            artifact sourcesJar {
+                classifier "sources"
+            }
         }
     }
+}
+
+// Create sources JAR task
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
 }
 
 // If you want to use the managed Android SDK versions from expo-modules-core, set this to true.
