@@ -1,6 +1,9 @@
 jdk:
   - openjdk17
 gradle:
+  version: 8.4
+  command: :android:build
+  offline: true
   command: :android:build
   settings: |
     include ':android'
