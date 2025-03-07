@@ -1,17 +1,15 @@
 {
-  "platforms": [
-    "apple",
-    "android",
-    "web"
-  ],
+  "platforms": ["apple", "android", "web"],
   "apple": {
-    "modules": [
-      "OnetransferModule"
-    ]
+    "modules": ["OnetransferModule"]
   },
   "android": {
-    "modules": [
-      "expo.modules.onetransfer.OnetransferModule"
-    ]
+    "gradleAarProjects": [
+      {
+        "name": "test-aar",
+        "aarFilePath": "android/libs/test.aar"
+      }
+    ],
+    "modules": ["expo.modules.onetransfer.OnetransferModule"]
   }
 }

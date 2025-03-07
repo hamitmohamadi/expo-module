@@ -14,11 +14,6 @@ class OnetransferModule : Module() {
     // The module will be accessible from `requireNativeModule('Onetransfer')` in JavaScript.
     Name("Onetransfer")
 
-    // Sets constant properties on the module. Can take a dictionary or a closure that returns a dictionary.
-    Constants(
-      "PI" to Math.PI
-    )
-
     // Defines event names that the module can send to JavaScript.
     Events("onChange")
 
@@ -34,17 +29,6 @@ class OnetransferModule : Module() {
       sendEvent("onChange", mapOf(
         "value" to value
       ))
-    }
-
-    // Enables the module to be used as a native view. Definition components that are accepted as part of
-    // the view definition: Prop, Events.
-    View(OnetransferView::class) {
-      // Defines a setter for the `url` prop.
-      Prop("url") { view: OnetransferView, url: URL ->
-        view.webView.loadUrl(url.toString())
-      }
-      // Defines an event that the view can send to JavaScript.
-      Events("onLoad")
     }
   }
 }
