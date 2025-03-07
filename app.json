@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "2b42b0a6-9330-4300-b837-20a6879f0cf6"
+      }
+    },
+    "android": {
+      "package": "com.mohamadihamit.onetransfer"
+    },
+    "plugins": [
+      "expo-build-properties"
+    ]
+  }
+}
